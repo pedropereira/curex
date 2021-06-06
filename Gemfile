@@ -12,7 +12,6 @@ gem "puma"
 gem "rails"
 
 group :development do
-  gem "byebug"
   gem "listen"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
@@ -23,6 +22,7 @@ group :development do
 end
 
 group :development, :test do
+  gem "byebug"
   gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "rspec-rails"
