@@ -11,6 +11,7 @@ gem "puma"
 gem "rails"
 
 group :development do
+  gem "byebug"
   gem "listen"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false

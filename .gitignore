@@ -12,18 +12,16 @@
 /config/master.key
 /config/credentials/*.key
 
-coverage
+/coverage
 
 .DS_Store
-
-.env*.local
-
+.byebug_history
 .idea
 .vscode/*
 
 /storage/*
 
-db/exports
-db/postgres-data
+/db/exports
+/db/postgres-data
 
 /vendor/*
