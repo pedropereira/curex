@@ -42,9 +42,6 @@ Metrics/BlockLength:
     - factory
     - it
 
-Metrics/MethodLength:
-  Max: 6
-
 Naming/VariableNumber:
   Enabled: false
 
