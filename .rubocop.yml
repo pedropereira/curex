@@ -1,0 +1,123 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+
+AllCops:
+  EnabledByDefault: true
+  Exclude:
+    - bin/**/*
+    - db/**/*
+    - tmp/**/*
+    - log/**/*
+    - vendor/**/*
+
+Bundler/GemComment:
+  Enabled: false
+
+Bundler/GemVersion:
+  EnforcedStyle: forbidden
+
+Layout/MultilineAssignmentLayout:
+  EnforcedStyle: same_line
+
+Layout/RedundantLineBreak:
+  Enabled: false
+
+Lint/ConstantResolution:
+  Enabled: false
+
+Lint/NumberConversion:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*
+    - config/routes.rb
+  IgnoredMethods:
+    - context
+    - define
+    - describe
+    - factory
+    - it
+
+Metrics/MethodLength:
+  Max: 6
+
+Naming/VariableNumber:
+  Enabled: false
+
+Performance/ChainArrayAllocation:
+  Enabled: false
+
+Rails/EnvironmentVariableAccess:
+  AllowReads: true
+
+Rails/FilePath:
+  EnforcedStyle: arguments
+
+Rails/RakeEnvironment:
+  Enabled: false
+
+Rails/SaveBang:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  AllowSubject: false
+  Max: 0
+
+Style/AccessorGrouping:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - "config/application.rb"
+    - "lib/**/*"
+
+Style/ConstantVisibility:
+  Enabled: false
+
+Style/Copyright:
+  Enabled: false
+
+Style/DisableCopsWithinSourceCodeDirective:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
+  IgnoredMethods:
+    - describe
+    - not_to
+    - require
+    - to
+
+Style/MissingElse:
+  Enabled: false
+
+Style/StaticClass:
+  Enabled: false
+
+Style/StringHashKeys:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
