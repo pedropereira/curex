@@ -1,0 +1,2 @@
+class ProjectCredentials < ApplicationRecord
+end

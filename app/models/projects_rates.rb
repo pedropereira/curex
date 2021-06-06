@@ -1,0 +1,2 @@
+class ProjectsRates < ApplicationRecord
+end

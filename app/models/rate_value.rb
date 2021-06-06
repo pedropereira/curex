@@ -1,0 +1,2 @@
+class RateValue < ApplicationRecord
+end
