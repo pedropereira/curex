@@ -7,6 +7,7 @@ ruby "3.0.1"
 
 gem "bootsnap"
 gem "dry-validation"
+gem "faraday"
 gem "pg"
 gem "puma"
 gem "rails"
@@ -26,4 +27,5 @@ group :development, :test do
   gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "rspec-rails"
+  gem "webmock"
 end
