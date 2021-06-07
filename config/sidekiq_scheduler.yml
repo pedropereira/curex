@@ -1,0 +1,5 @@
+refresh_eur_usd_rate:
+    class: RefreshEurUsdWorker
+    cron: "0 * * * *"
+    queue: default
+    description: Refreshes the EUR-USD rate

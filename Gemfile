@@ -11,6 +11,8 @@ gem "faraday"
 gem "pg"
 gem "puma"
 gem "rails"
+gem "sidekiq"
+gem "sidekiq-scheduler"
 
 group :development do
   gem "listen"
