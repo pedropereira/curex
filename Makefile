@@ -16,11 +16,5 @@ server:
 shell:
 	docker exec -it curex_api zsh
 
-stats:
-	bundle exec rails stats
-
-steep:
-	bundle exec steep check
-
 up:
 	docker-compose -f docker-compose.yml run --service-ports --name curex_api api zsh; docker-compose -f docker-compose.yml down
