@@ -26,6 +26,7 @@ end
 
 group :development, :test do
   gem "byebug"
+  gem "simplecov", require: false
   gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "rspec-rails"
