@@ -12,7 +12,7 @@ class Api::V1::RatesController < ApplicationController
   private
 
   def permitted_params
-    params.require(:rate).permit(:name).to_h
+    params.permit(:name).to_h
   end
 
   def serialize(rate)

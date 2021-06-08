@@ -7,7 +7,7 @@ RSpec.describe "Show rate", type: :request do
     project = FactoryBot.create(:project)
     project_credentials = FactoryBot.create(:project_credentials, project_id: project.id)
     FactoryBot.create(:rate, name: "EUR-USD")
-    params = { rate: { name: "EUR-USD" }, api_key: project_credentials.api_key }
+    params = { name: "EUR-USD", api_key: project_credentials.api_key }
 
     get(api_v1_rate_path, params: params)
 
@@ -17,7 +17,7 @@ RSpec.describe "Show rate", type: :request do
   it "responds with 404 status code" do
     project = FactoryBot.create(:project)
     project_credentials = FactoryBot.create(:project_credentials, project_id: project.id)
-    params = { rate: { name: "invalid" }, api_key: project_credentials.api_key }
+    params = { name: "invalid", api_key: project_credentials.api_key }
 
     get(api_v1_rate_path, params: params)
 
@@ -26,7 +26,7 @@ RSpec.describe "Show rate", type: :request do
 
   it "responds with 401 status code if api_key is not sent" do
     FactoryBot.create(:rate, name: "EUR-USD")
-    params = { rate: { name: "EUR-USD" } }
+    params = { name: "EUR-USD" }
 
     get(api_v1_rate_path, params: params)
 
@@ -35,7 +35,7 @@ RSpec.describe "Show rate", type: :request do
 
   it "responds with 401 status code if api_key is invalid" do
     FactoryBot.create(:rate, name: "EUR-USD")
-    params = { rate: { name: "EUR-USD" }, api_key: "invalid" }
+    params = { name: "EUR-USD", api_key: "invalid" }
 
     get(api_v1_rate_path, params: params)
 
@@ -48,7 +48,7 @@ RSpec.describe "Show rate", type: :request do
     project_credentials = FactoryBot.create(:project_credentials, project_id: project.id)
     rate = FactoryBot.create(:rate, name: "EUR-USD")
     FactoryBot.create(:rate_value, value: 1.2345, rate_id: rate.id, created_at: time, updated_at: time)
-    params = { rate: { name: "EUR-USD" }, api_key: project_credentials.api_key }
+    params = { name: "EUR-USD", api_key: project_credentials.api_key }
 
     get(api_v1_rate_path, params: params)
     result = JSON.parse(response.body)
