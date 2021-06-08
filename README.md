@@ -1,24 +1,29 @@
-# README
+# CurEx - Currency Exchange API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This toy project implements a backend that can fetch currency conversion rates.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+In order to setup the project, `Docker` is required. The project itself has a `Makefile` which contains a few helper commands:
 
-* System dependencies
+- `build` - Builds the docker image containing the application.
+- `rspec` - Runs the test suite and coverage.
+- `rubocop` - Runs the Rubocop linter.
+- `server` - Runs the server.
+- `shell` - Attaches another shell session to the running application container.
+- `sidekiq` - Runs sidekiq.
+- `up` - Creates and starts the containers necessary for the application to run, attaching a shell session to it.
 
-* Configuration
+### Steps
 
-* Database creation
+On your terminal of choice:
 
-* Database initialization
+- `make build`
+- `make up`
+- `rake db:setup`
+- `make server`
 
-* How to run the test suite
+And then, on a separate tab:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `make shell`
+- `make sidekiq`
