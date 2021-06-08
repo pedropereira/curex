@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class RatesController < ApplicationController
+  include Authenticatable
+
   def show
     rate = FindRateQuery.new(name: permitted_params[:name]).call
 

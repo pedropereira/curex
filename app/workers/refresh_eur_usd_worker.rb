@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RefreshEurUsdWorker
   include Sidekiq::Worker
 
