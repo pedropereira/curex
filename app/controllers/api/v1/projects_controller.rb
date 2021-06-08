@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ProjectsController < ApplicationController
+class Api::V1::ProjectsController < ApplicationController
   def create
     form = CreateProjectForm.new(contract: CreateProjectContract.new, params: permitted_params).call
 

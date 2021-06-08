@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RatesController < ApplicationController
+class Api::V1::RatesController < ApplicationController
   include Authenticatable
 
   def show

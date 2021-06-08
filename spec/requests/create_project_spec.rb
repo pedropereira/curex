@@ -8,7 +8,7 @@ RSpec.describe "Create project", type: :request do
   it "responds with 200 status code" do
     params = { project: { name: "Project" } }
 
-    post(projects_path, params: params)
+    post(api_v1_projects_path, params: params)
 
     expect(response).to have_http_status(:ok)
   end
@@ -16,7 +16,7 @@ RSpec.describe "Create project", type: :request do
   it "responds with 400 status code" do
     params = { project: { name: "" } }
 
-    post(projects_path, params: params)
+    post(api_v1_projects_path, params: params)
 
     expect(response).to have_http_status(:bad_request)
   end
@@ -25,7 +25,7 @@ RSpec.describe "Create project", type: :request do
     params = { project: { name: "Project" } }
 
     travel_to("2020-10-31T01:30:00Z") do
-      post(projects_path, params: params)
+      post(api_v1_projects_path, params: params)
     end
     result = JSON.parse(response.body)
     project_credentials = ProjectCredentials.last

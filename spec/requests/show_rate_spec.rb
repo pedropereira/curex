@@ -9,7 +9,7 @@ RSpec.describe "Show rate", type: :request do
     FactoryBot.create(:rate, name: "EUR-USD")
     params = { rate: { name: "EUR-USD" }, api_key: project_credentials.api_key }
 
-    get(rate_path, params: params)
+    get(api_v1_rate_path, params: params)
 
     expect(response).to have_http_status(:ok)
   end
@@ -19,7 +19,7 @@ RSpec.describe "Show rate", type: :request do
     project_credentials = FactoryBot.create(:project_credentials, project_id: project.id)
     params = { rate: { name: "invalid" }, api_key: project_credentials.api_key }
 
-    get(rate_path, params: params)
+    get(api_v1_rate_path, params: params)
 
     expect(response).to have_http_status(:not_found)
   end
@@ -28,7 +28,7 @@ RSpec.describe "Show rate", type: :request do
     FactoryBot.create(:rate, name: "EUR-USD")
     params = { rate: { name: "EUR-USD" } }
 
-    get(rate_path, params: params)
+    get(api_v1_rate_path, params: params)
 
     expect(response).to have_http_status(:unauthorized)
   end
@@ -37,7 +37,7 @@ RSpec.describe "Show rate", type: :request do
     FactoryBot.create(:rate, name: "EUR-USD")
     params = { rate: { name: "EUR-USD" }, api_key: "invalid" }
 
-    get(rate_path, params: params)
+    get(api_v1_rate_path, params: params)
 
     expect(response).to have_http_status(:unauthorized)
   end
@@ -50,7 +50,7 @@ RSpec.describe "Show rate", type: :request do
     FactoryBot.create(:rate_value, value: 1.2345, rate_id: rate.id, created_at: time, updated_at: time)
     params = { rate: { name: "EUR-USD" }, api_key: project_credentials.api_key }
 
-    get(rate_path, params: params)
+    get(api_v1_rate_path, params: params)
     result = JSON.parse(response.body)
 
     expect(result).to eq(
