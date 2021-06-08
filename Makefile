@@ -16,5 +16,8 @@ server:
 shell:
 	docker exec -it curex_api zsh
 
+sidekiq:
+	bundle exec sidekiq
+
 up:
 	docker-compose -f docker-compose.yml run --service-ports --name curex_api api zsh; docker-compose -f docker-compose.yml down
